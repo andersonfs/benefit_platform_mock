@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.5.2)
+      concurrent-ruby (~> 1.0)
     actioncable (8.0.4)
       actionpack (= 8.0.4)
       activesupport (= 8.0.4)
@@ -44,6 +46,11 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
+    active_model_serializers (0.10.16)
+      actionpack (>= 4.1)
+      activemodel (>= 4.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (8.0.4)
       activesupport (= 8.0.4)
       globalid (>= 0.3.6)
@@ -82,6 +89,8 @@ GEM
     brakeman (8.0.2)
       racc
     builder (3.3.0)
+    case_transform (0.2)
+      activesupport
     concurrent-ruby (1.3.6)
     connection_pool (3.0.2)
     crass (1.0.6)
@@ -110,6 +119,7 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.18.1)
+    jsonapi-renderer (0.2.2)
     kamal (2.10.1)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -263,6 +273,10 @@ GEM
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
+    solid-process (0.4.0)
+      activemodel (>= 6.0)
+      solid-result (~> 2.0)
+    solid-result (2.0.0)
     solid_cache (1.0.10)
       activejob (>= 7.2)
       activerecord (>= 7.2)
@@ -312,6 +326,8 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  aasm
+  active_model_serializers
   bootsnap
   brakeman
   debug
@@ -320,6 +336,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.4)
   rubocop-rails-omakase
+  solid-process (~> 0.4.0)
   solid_cache
   solid_queue
   thruster
