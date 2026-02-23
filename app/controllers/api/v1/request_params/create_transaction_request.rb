@@ -18,10 +18,12 @@ module Api
             unit: params["unit"],
             external_id: params["external_id"],
             customer_id: params["customer_id"],
+            authorization_callback_url: params["authorization_callback_url"],
             correlation_id: headers["x-correlation-id"],
             company_id: headers["x-company-id"],
             workspace_id: headers["x-workspace-id"],
-            application_id: headers["x-application-id"]
+            application_id: headers["x-application-id"],
+            status: "created"
           }.deep_symbolize_keys
         end
 

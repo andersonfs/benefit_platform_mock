@@ -19,8 +19,9 @@ module Transactions
       attribute :external_id
       attribute :recipient
       attribute :authorization_callback_url
+      attribute :status
 
-      validates :correlation_id, :external_id, :company_id, :workspace_id, :application_id, :customer_id, :product_id, :authorization_callback_url, presence: true
+      validates :correlation_id, :external_id, :company_id, :workspace_id, :application_id, :customer_id, :product_id, :authorization_callback_url, :status, presence: true
 
       validate do
         errors.add(:amount, " can\'t be less than zero") if amount <= 0
@@ -31,7 +32,7 @@ module Transactions
     def call(attributes)
       return transaction_already_exists_failure if transaction_already_exists?(attributes[:external_id])
 
-      transaction = dependencies.transaction_repository.create!(attributes.merge(status: "created"))
+      transaction = dependencies.transaction_repository.create!(attributes)
 
       Success(:transaction_created, transaction:)
     end

@@ -19,7 +19,6 @@ class Transaction < ApplicationRecord
 
   validates :status, :company_id, :application_id, :customer_id, :product_id, :recipient, :unit, :external_id, :amount, :authorization_callback_url, presence: true
   validates :correlation_id, presence: true, uniqueness: true
-  validates :status, presence: true, inclusion: { in: %w[created, failed, authorized, confirmed, canceled] }
 
   include AASM
 
