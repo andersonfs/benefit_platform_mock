@@ -151,7 +151,8 @@ GEM
       net-smtp
     marcel (1.1.0)
     mini_mime (1.1.5)
-    minitest (6.0.1)
+    minitest (6.0.2)
+      drb (~> 2.0)
       prism (~> 1.5)
     msgpack (1.8.0)
     net-http (0.6.0)
@@ -281,7 +282,7 @@ GEM
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
-    solid-process (0.4.0)
+    solid-process (0.6.0)
       activemodel (>= 6.0)
       solid-result (~> 2.0)
     solid-result (2.0.0)
@@ -345,7 +346,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.4)
   rubocop-rails-omakase
-  solid-process (~> 0.4.0)
+  solid-process (~> 0.6.0)
   solid_cache
   solid_queue
   thruster

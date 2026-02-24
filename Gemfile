@@ -18,7 +18,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Use the database-backed adapters for Rails.cache and Active Job
 gem "solid_cache"
 gem "solid_queue"
-gem 'solid-process', '~> 0.4.0'
+gem 'solid-process', '~> 0.6.0'
 gem 'active_model_serializers'
 gem 'aasm'
 
